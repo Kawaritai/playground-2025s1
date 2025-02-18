@@ -54,14 +54,41 @@
     - Correct
   - b) For all intervals (1sd, 2sd, 3sd), 44 out of 45 measurements fall within them. The only measurement that is not included is the outlier, 35.1. The empirical rule would otherwise suggest that the distribution would be 68-95-99.7, but in this case, we have approximately all of the data within 1 sd, using the calculated sd. 
     - Fix: The answer manually calculates the expected frequency, being [30.600, 42.750, 44.865]
-## 1.4
 
-N/A
+**Q1.14**: Skip
 
-## 1.5
+**Q1.15**: Refers to **Q1.4**
+- a) $\bar{y} = 4.387$, $s = 1.871384$
+- b) 
+    | Intervals     | Actual_Frequency | Expected_Frequency |
+    | :-------------- | :--------------- | :----------------- |
+    | \[2.52, 6.26]  | 35               | 27.20              |
+    | \[0.64, 8.13]  | 39               | 38.00              |
+    | \[-1.23, 10.00] | 39               | 39.88              |
+    - Correct
 
-N/A
+**Q1.16**: In this question we remove the extremely large value (11.88) and re-calculate Q1.15:
+  - a) $\bar{y} = 4.19$, $s = 1.44$
+  - b)
+    | Intervals     | Actual_Frequency | Expected_Frequency |
+    | :-------------- | :--------------- | :----------------- |
+    | \[2.75, 5.64]  | 25               | 26.520             |
+    | \[1.31, 7.08]  | 36               | 37.050             |
+    | \[-0.13, 8.52] | 39               | 38.883             |
+    - Correct
 
-## 1.6
+**Q1.17**: The empirical rule suggests that the standard deviation may be approximated by one-fourth of the range. 
+- For Q1.4, we have $r =  5.38$, $r/4 = 1.345$, and $s = 1.441822$
 
-N/A
+**Q1.18**: We approximate $s = r/4 = 600/4 = 150$.
+
+**Q1.19**: The empirical rule suggests that $r/4$ approximates tthe standard deviation for a set of measurements. However, taking the standard deviation from the chloroform at face value would suggest that, if normally distributed, half the results would lie from the interval -19 to 34, but negative values do not make sense as a measurement, and the range cannot have a minimum of -19. Therefore, chloroform amounts do not have a normal distribution. 
+
+**Q1.20**: Weekly maintenance costs for a factory, recorded over a long period of time and adjusted for inflation, tend to have an approximately normal distribution with an average of $420 and a standard deviation of $30. If $450 is budgeted for next week, what is an approximate probability that this budgeted figure will be exceeded?
+- Note that $450 = \bar{y} + s$. Then the approximate probability that this budgeted figure will be exceeded, according to the empirical rule, would be $50 - 34 = 16$%. 
+
+**Q1.21**: The manufacturer of a new food additive for beef cattle claims that 80% of the animals fed a diet including this additive should have monthly weight gains in excess of 20 pounds. A large sample of measurements on weight gains for cattle fed this diet exhibits an approximately normal distribution with mean 22 pounds and standard deviation 2 pounds. Do you think the sample information contradicts the manufacturer’s claim? (Calculate the probability of a weight gain exceeding 20 pounds.)
+- Note that $20 = \bar{y} - 2$. The relative probability of a weight gain exceeding 20 pounds is $50 + 34 = 84$%. The manufacturer claims that this probability is 80%. Therefore the claim is reasonable. 
+
+## Supplementary Exercises
+- Oh, I probably should've just done these rather than the above. Oh well. 
