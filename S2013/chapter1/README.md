@@ -92,3 +92,16 @@
 
 ## Supplementary Exercises
 - Oh, I probably should've just done these rather than the above. Oh well. 
+  
+\***Q1.32**: Recall that the asterisk denotes "more challenging" exercises (and/or optional exercises).
+
+**Question**:
+![Q1-32.png](Q1-32.png)
+
+**Attempt**:
+![1-32.png](1-32.png)
+
+**Answer**:
+![QA1-32.png](QA1-32.png)
+
+**Fix**: On the right track by specifying the quantity lying outside the interval. You should've used formal set notation to denote the measurements falling inside the interval as one set (in b) and outside as another set (in A). In fact, we can immediately throw away the behaving set (b) and skip to the step, $s^2 \geq k^2s^2n'/(n-1)$, then simplify to the desired answer. 
