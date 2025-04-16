@@ -101,14 +101,14 @@ for (x in unique(Mx$Year)){
 
 #### loop for cohort life expectancy ####
 
-# LT_c <- c()
-# 
-# for (y in unique(Mx2$Year)){
-#   mx2 <- Mx2[Mx2$Year==y,]$mx
-#   lt_y <- LifeTableMx(mx2, sex)
-#   lt_y$Year <- y
-#   LT_c <- rbind(LT_c,lt_y)
-# }
+LT_c <- c()
+
+for (y in unique(Mx2$Year)){
+  mx2 <- Mx2[Mx2$Year==y,]$mx
+  lt_y <- LifeTableMx(mx2, sex)
+  lt_y$Year <- y
+  LT_c <- rbind(LT_c,lt_y)
+}
 
 #### Visualization ####
 
