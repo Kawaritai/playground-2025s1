@@ -90,6 +90,7 @@ ggplot()+
   geom_line(LT_A, mapping = aes(x = Age, y = lx, color = "1850"))+
   geom_line(LT_B, mapping = aes(x = Age, y = lx, color = "2020"))+
   scale_color_manual(values = c("purple","tomato2"))+
+  guides(color = guide_legend(title = "Year"))+
   labs(x = "Age (years)", y = "Number of survivors (lx)")+
   ggtitle("Number of people left alive at Age (1850 vs 2020), Netherlands (female 1x1)")
 

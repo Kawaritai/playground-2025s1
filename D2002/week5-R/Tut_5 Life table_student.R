@@ -6,13 +6,15 @@
 ## read the first three columns for year, age and mx 
 
 # the value is either "f" or "m"
-sex <-"f"
+sex <-"m"
 options(scipen = 5) # prevent scientific notation
 
 # setwd("C:/Users/u1019088/OneDrive - Australian National University/Courses/DEMO8008/2025/Day 5")
 
 ## Period data
-Mx <- read.table("fltper_1x1.txt", header=TRUE, fill=TRUE, skip=2)[,1:3]
+Mx <- read.table("den_mltper_1x1.txt", header=TRUE, fill=TRUE, skip=2)[,1:3]
+
+data <- read.table("den_mltper_1x1.txt", header=TRUE, fill=TRUE, skip=2)
 
 Mx$Age[Mx$Age=="110+"] <- 110
 Mx$Age <- as.numeric(Mx$Age)
@@ -101,14 +103,14 @@ for (x in unique(Mx$Year)){
 
 #### loop for cohort life expectancy ####
 
-LT_c <- c()
-
-for (y in unique(Mx2$Year)){
-  mx2 <- Mx2[Mx2$Year==y,]$mx
-  lt_y <- LifeTableMx(mx2, sex)
-  lt_y$Year <- y
-  LT_c <- rbind(LT_c,lt_y)
-}
+# LT_c <- c()
+# 
+# for (y in unique(Mx2$Year)){
+#   mx2 <- Mx2[Mx2$Year==y,]$mx
+#   lt_y <- LifeTableMx(mx2, sex)
+#   lt_y$Year <- y
+#   LT_c <- rbind(LT_c,lt_y)
+# }
 
 #### Visualization ####
 
@@ -117,11 +119,11 @@ library(ggplot2)
 
 ## plot life expectancy at age 0, 30 and 80
 ggplot()+
-  geom_line(LT_p[LT_p$Age==0,],
+  geom_line(data[data$Age==0,],
             mapping=aes(x=Year, y=ex, color="e(0) at age 0"))+
-  geom_line(LT_p[LT_p$Age==30,],
+  geom_line(data[data$Age==30,],
             mapping=aes(x=Year, y=ex, color="e(30) at age 30"))+
-  geom_line(LT_p[LT_p$Age==80,],
+  geom_line(data[data$Age==80,],
             mapping=aes(x=Year, y=ex, color="e(80) at age 80"))+
   scale_x_continuous(n.breaks = 10)+
   scale_y_continuous(breaks = seq(0,110,10),limits = c(0,100))+

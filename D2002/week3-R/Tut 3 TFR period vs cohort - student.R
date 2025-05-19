@@ -86,8 +86,8 @@ ggplot(TFR,aes(x=Year ,y=TFR,color="Period"))+
   geom_line()+
   theme(aspect.ratio=1)+
   geom_line(CTFR,mapping=aes(x=Year+26 ,y=CTFR,color="Cohort"))+
-  scale_color_manual(values = c("navy","red"))+
-  labs(title="TFR: Period vs Cohort, Canada (1921-2019)")
+  scale_color_manual(values = c("navy","red"))
+
 
 
 
