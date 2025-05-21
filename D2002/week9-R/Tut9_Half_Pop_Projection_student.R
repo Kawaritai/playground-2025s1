@@ -54,19 +54,22 @@ Pop<-read.table("Population.txt",
 #### NEXT WEEK
 
 l1<-read.table("line1.txt",header=TRUE)
-l2<-read.table("line2.txt",header=TRUE)
+# l2<-read.table("line2.txt",header=TRUE)
 
 
 
-k<-0.243368
+k<-0.243368 # contains sex ratio at birth and survivorship
 km<-0.254229
   
 #### Leslie matrix ####
 
-Mf<-cbind(rbind(l2$Line1,diag(Sx)),
+Mf<-cbind(rbind(l1$Line1,diag(Sx)),
           c(rep(0,110),L111))
 
-Mm<-cbind(rbind(rep(0, length(l2$Line1)),diag(Sxm)),
+# First, we combine the first row, plus the diagonalised Sx
+# Second, we appended two extra columns for the omega terms. 
+
+Mm<-cbind(rbind(rep(0, length(l1$Line1)),diag(Sxm)),
           c(rep(0,110),L111m))
 
 ### Ipop and Ipopm the base population of females and males 
@@ -96,15 +99,16 @@ rownames(popm)=1:Proj
 
 Proj_Pop <- c()
 
+# This loop is important
 for (year in 2:Proj){
   
   pop[year,]<-t(Mf%*%pop[(year-1),])
   tot_birth <- pop[year,1]
-  pop[year,1] <- tot_birth *k  
+  pop[year,1] <- tot_birth *k # adjustment for female (SRB + survivorship)
  
   
   popm[year,-1]<-t(Mm%*%popm[(year-1),])[-1]
-  popm[year,1] <- tot_birth *km 
+  popm[year,1] <- tot_birth *km # adjustment for male (SRB + survivorship)
     
     
   To<-pop[year,]+popm[year,]
@@ -113,9 +117,9 @@ for (year in 2:Proj){
                               Age=0:110,
                               Female=pop[year,],
                               Male=popm[year,],
-                              Total=To)
-  
-  Proj_Pop <- rbind(Proj_Pop, Proj_Pop_temp)
+                              Total=To) # This is just a single row
+  # For which we make an ultimate dataframe, later.
+  Proj_Pop <- rbind(Proj_Pop, Proj_Pop_temp) # Accumulate
 }
 
 #### Plot the results as a pop pyramid ####

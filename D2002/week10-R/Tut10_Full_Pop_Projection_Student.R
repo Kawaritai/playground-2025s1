@@ -101,7 +101,11 @@ Migration_est <- function(Pop,mlt,flt,year){
   return(Mig)
 }
 
+dev.off()
+
 Mig <- Migration_est(Pop,mlt=lm,flt=l,YEAR)
+
+Mig <- Migration_est(Proj_Pop,mlt=lm,flt=l,2025)
 
 #### Fertility and Births ####
 

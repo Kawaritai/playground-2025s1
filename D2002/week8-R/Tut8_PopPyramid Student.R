@@ -121,10 +121,10 @@ ggsave(paste0("population pyramid_",Names,"_","comp",".png"),
 
 
 ggplot()+
-  geom_col(data=Pop_total[Pop_total$Year == 1971,],
+  geom_col(data=Pop_total[Pop_total$Year == 1981,],
            mapping = aes(x = Age,  y = Percentage, fill = Sex),
            alpha = 0.6,width = 1,show.legend = T)+
-  geom_col(data=Pop_total[Pop_total$Year == 2021,],
+  geom_col(data=Pop_total[Pop_total$Year == 2019,],
            mapping = aes(x = Age,  y = Percentage, fill = Sex),
            alpha = 0.6,width = 1,show.legend = T)+
   scale_y_continuous(labels = function(x){paste0(x,"%")},
